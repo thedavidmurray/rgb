@@ -9,9 +9,9 @@ const HOST = process.env.NEXT_PUBLIC_HOST;
 if (!HOST) throw new Error("NEXT_PUBLIC_HOST is not set");
 
 export const metadata: Metadata = {
-    title: "Small Brain Resizer",
+    title: "rgb",
     openGraph: {
-        title: "Small Brain Resizer",
+        title: "rgb",
         images: ["/api/image"],
     },
     other: {
@@ -28,7 +28,7 @@ export default async function Page() {
         <>
             <div>
                 <main >
-                    Small Brain Resizer
+                    rgb
                     <IQ/>
                 </main>
             </div>
