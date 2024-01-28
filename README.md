@@ -1,10 +1,8 @@
-# Small Brain Frames Example App
+#thisisrgb
 
-A tiny example app that makes my brain smaller or larger. 
-
+A canvas we made
 
 ## Demo
 
-- https://warpcast.com/0xsmallbrain/0x3023d5c5
-
+warpcast.com/
 
