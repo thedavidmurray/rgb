@@ -14,7 +14,7 @@ const IQ = () => {
         <>
             <div>
                 <main >
-                    Small Brain Resizer: ${iq ?? "-"}
+                    rgb: ${iq ?? "-"}
                 </main>
             </div>
         </>
