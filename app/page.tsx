@@ -26,9 +26,12 @@ export default function Page() {
   const [color, setColor] = useState({ R: 0, G: 0, B: 0 });
   const router = useRouter();
 
-  const handleColorChange = (channel: keyof typeof color, value: number) => {
-    setColor(prevColor => ({ ...prevColor, [channel]: Math.max(0, Math.min(255, prevColor[channel] + value)) }));
-  };
+const handleColorChange = (channel: keyof typeof color) => {
+  setColor(prevColor => ({
+    ...prevColor,
+    [channel]: prevColor[channel] < 255 ? prevColor[channel] + 1 : 0
+  }));
+};
 
   const handleMint = async () => {
     // Implement the minting logic here
@@ -45,18 +48,18 @@ export default function Page() {
           </div>
           
           {/* The page to select RGB values */}
-          {router.pathname === '/mint' && (
-            <>
-              <div>
-                RGB: ({color.R}, {color.G}, {color.B})
-                <div style={{ background: `rgb(${color.R},${color.G},${color.B})`, width: '50px', height: '50px' }} />
-              </div>
-              <button onClick={() => handleColorChange('R', 5)}>R</button>
-              <button onClick={() => handleColorChange('G', 5)}>G</button>
-              <button onClick={() => handleColorChange('B', 5)}>B</button>
-              <button onClick={handleMint}>MINT!</button>
-            </>
-          )}
+            {router.pathname === '/mint' && (
+              <>
+                <div>
+                  RGB: ({color.R}, {color.G}, {color.B})
+                  <div style={{ background: `rgb(${color.R},${color.G},${color.B})`, width: '50px', height: '50px' }} />
+                </div>
+                <button onClick={() => handleColorChange('R')}>R</button>
+                <button onClick={() => handleColorChange('G')}>G</button>
+                <button onClick={() => handleColorChange('B')}>B</button>
+                <button onClick={handleMint}>MINT!</button>
+              </>
+            )}
         </main>
       </div>
     </>
